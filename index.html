@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Bhabhi! ✨</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-glow"></div>
+    <canvas id="stars"></canvas>
+
+    <!-- MAIN HOMEPAGE -->
+    <main class="hero">
+
+        <div class="top-label">
+            <span class="small-star">✦</span>
+            A LITTLE SOMETHING FOR YOU
+            <span class="small-star">✦</span>
+        </div>
+
+        <div class="flower">✿</div>
+
+        <p class="eyebrow">A special day for someone special</p>
+
+        <h1>
+            Happiest Birthday,
+            <span>Bhabhi!</span>
+        </h1>
+
+        <p class="intro">
+            Some people make life a little more beautiful just by being in it.
+            Today is all about celebrating you and the happiness you bring.
+        </p>
+
+        <div class="divider">
+            <span></span> ✧ <span></span>
+        </div>
+
+        <p class="little-note">
+            A tiny corner of the internet, made with lots of love.
+        </p>
+
+        <button id="revealBtn" class="main-button">
+            <span>Open Your Little Surprise</span>
+            <span>✧</span>
+        </button>
+
+        <div id="wishBox" class="wish-box">
+            <p id="wishText"></p>
+        </div>
+
+        <div class="button-group">
+
+            <button id="musicBtn" class="secondary-button">
+                ♫ Hear Your Wish
+            </button>
+
+            <button id="magicBtn" class="secondary-button magic-button">
+                ✨ Play a Little Magic
+            </button>
+
+        </div>
+
+        <p class="footer-note">Made with love, just for you ♡</p>
+
+    </main>
+
+
+    <!-- BIRTHDAY MAGIC SURPRISE: HIDDEN UNTIL MAGIC BUTTON IS CLICKED -->
+    <section id="magicPopup" class="magic-popup">
+
+        <button id="closeMagic" class="close-magic">✕</button>
+
+        <div class="magic-content">
+
+            <p class="magic-label">✧ A LITTLE BIRTHDAY MAGIC ✧</p>
+
+            <h2>Make a Wish!</h2>
+
+            <p class="magic-instruction">
+                Click each candle to blow it out.
+            </p>
+
+            <div class="birthday-cake">
+
+                <div class="candles">
+
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+
+                </div>
+
+                <div class="cake-top"></div>
+
+                <div class="cake-body">
+                    <div class="icing"></div>
+                    <div class="cake-decoration">♥　♥　♥</div>
+                </div>
+
+                <div class="cake-plate"></div>
+
+            </div>
+
+            <h3 id="wishMessage">Your wish is waiting... 💗</h3>
+
+            <p id="wishSubtext">
+                Three candles, three wishes. Let's go!
+            </p>
+
+            <button id="relightBtn" class="relight-button">
+                ✨ Make Another Wish
+            </button>
+
+        </div>
+
+        <div id="magicConfetti"></div>
+
+    </section>
+
+
+    <!-- AUDIO -->
+    <audio id="birthdayAudio" src="audio/happy-birthday.mp3"></audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

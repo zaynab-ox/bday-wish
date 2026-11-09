@@ -1,0 +1,448 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #100d1c;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.background-glow {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 20% 20%, #51304b55, transparent 45%),
+        radial-gradient(ellipse at 80% 80%, #244c5555, transparent 45%),
+        radial-gradient(ellipse at center, #21172d, #100d1c 75%);
+    z-index: -2;
+}
+
+#stars {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* HOMEPAGE */
+
+.hero {
+    min-height: 100vh;
+    width: 100%;
+    padding: 70px 20px 35px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.top-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #d9b6ce;
+    margin-bottom: 25px;
+}
+
+.small-star {
+    color: #e9b9d5;
+    margin: 0 8px;
+}
+
+.flower {
+    font-size: 43px;
+    color: #e5a6cc;
+    margin-bottom: 15px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #c9a9c5;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 8vw, 85px);
+    font-weight: 500;
+    line-height: 1.05;
+    color: #fff0f7;
+}
+
+h1 span {
+    display: block;
+    color: #e9a9ce;
+    font-style: italic;
+}
+
+.intro {
+    max-width: 480px;
+    line-height: 1.9;
+    font-size: 14px;
+    color: #c7b9cc;
+    margin-top: 25px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #e6b4d2;
+    margin: 28px 0;
+}
+
+.divider span {
+    width: 55px;
+    height: 1px;
+    background: #a7799e;
+}
+
+.little-note {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: #d5b6d0;
+    font-size: 19px;
+    margin-bottom: 28px;
+}
+
+.main-button {
+    border: 1px solid #e7b4d3;
+    background: linear-gradient(135deg, #e8b4d1, #b77baf);
+    color: #24152b;
+    padding: 15px 27px;
+    border-radius: 40px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 35px #e8a9d455;
+}
+
+.wish-box {
+    max-width: 500px;
+    line-height: 1.9;
+    color: #f2d9e9;
+    font-size: 14px;
+    margin-top: 25px;
+    padding: 0 10px;
+}
+
+.wish-box:empty {
+    display: none;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.secondary-button {
+    background: #ffffff0b;
+    color: #f2d7e9;
+    border: 1px solid #bd8db455;
+    border-radius: 30px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.secondary-button:hover {
+    background: #e6b4d322;
+    border-color: #e8b4d3;
+    transform: translateY(-3px);
+}
+
+.footer-note {
+    margin-top: 50px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #8e7896;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+
+/* MAGIC POPUP */
+
+.magic-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    overflow-y: auto;
+    background:
+        radial-gradient(circle at 50% 35%, #55344f, transparent 55%),
+        linear-gradient(135deg, #171021, #100d1c);
+}
+
+.magic-popup.active {
+    display: flex;
+    animation: appear 0.5s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close-magic {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid #ffffff55;
+    color: white;
+    background: #ffffff10;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.magic-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 500px;
+    padding: 35px 10px;
+}
+
+.magic-label {
+    color: #e9b8d5;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.magic-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(45px, 8vw, 65px);
+    font-weight: 500;
+    color: #ffe9f4;
+}
+
+.magic-instruction {
+    color: #d7c2d5;
+    font-size: 13px;
+    margin: 12px 0 20px;
+}
+
+
+/* CAKE */
+
+.birthday-cake {
+    position: relative;
+    width: 250px;
+    height: 220px;
+    margin: 0 auto 15px;
+}
+
+.cake-body {
+    position: absolute;
+    width: 220px;
+    height: 100px;
+    bottom: 25px;
+    left: 15px;
+    border-radius: 12px 12px 25px 25px;
+    background: linear-gradient(135deg, #f4a8c9, #c86c9e);
+    box-shadow: 0 12px 35px #f18abb44;
+}
+
+.cake-top {
+    position: absolute;
+    z-index: 2;
+    width: 220px;
+    height: 35px;
+    bottom: 110px;
+    left: 15px;
+    border-radius: 50%;
+    background: #ffe0ed;
+}
+
+.icing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 100%;
+    border-radius: 0 0 50% 50%;
+    background: #ffe0ed;
+}
+
+.cake-decoration {
+    position: absolute;
+    top: 45px;
+    width: 100%;
+    color: #fff0f7;
+    font-size: 20px;
+}
+
+.cake-plate {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    width: 250px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(#f8dce9, #c9a0b9);
+}
+
+.candles {
+    position: absolute;
+    z-index: 4;
+    bottom: 145px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 27px;
+}
+
+.candle {
+    position: relative;
+    width: 13px;
+    height: 55px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: repeating-linear-gradient(
+        45deg,
+        #fff0a8,
+        #fff0a8 5px,
+        #e9a6c9 5px,
+        #e9a6c9 10px
+    );
+    transition: 0.3s;
+}
+
+.flame {
+    position: absolute;
+    width: 17px;
+    height: 25px;
+    top: -27px;
+    left: -2px;
+    border-radius: 50% 50% 45% 45%;
+    background: radial-gradient(
+        circle at 50% 70%,
+        #fff8a6,
+        #ff9c42 65%,
+        transparent 70%
+    );
+    filter: drop-shadow(0 0 9px #ffb347);
+    animation: flicker 0.5s infinite alternate;
+}
+
+@keyframes flicker {
+    from { transform: scale(1) rotate(-5deg); }
+    to { transform: scale(1.15) rotate(5deg); }
+}
+
+.candle.blown .flame {
+    display: none;
+}
+
+.candle.blown {
+    opacity: 0.6;
+    transform: scaleY(0.9);
+}
+
+#wishMessage {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: #ffd2e8;
+    margin: 15px 0 5px;
+}
+
+#wishSubtext {
+    color: #e8cce0;
+    font-size: 13px;
+}
+
+.relight-button {
+    margin-top: 22px;
+    padding: 12px 24px;
+    border: 1px solid #f5b8d8;
+    border-radius: 30px;
+    background: #ffffff12;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.relight-button:hover {
+    background: #f5b8d8;
+    color: #24152b;
+    transform: translateY(-3px);
+}
+
+
+/* SPARKLES */
+
+#magicConfetti {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.magic-sparkle {
+    position: absolute;
+    font-size: 22px;
+    animation: sparkleFly 1.7s ease-out forwards;
+}
+
+@keyframes sparkleFly {
+    to {
+        transform: translate(var(--x), -170px) rotate(180deg) scale(0.3);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero {
+        padding-top: 55px;
+    }
+
+    .intro {
+        font-size: 13px;
+    }
+
+    .footer-note {
+        margin-top: 35px;
+    }
+
+    .magic-content {
+        padding-top: 50px;
+    }
+}
